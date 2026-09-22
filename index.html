@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>AI Traffic Light Game - Administrative Professionals</title>
+<title>AI Traffic Light Game - Out-of-Scope Leaders</title>
 <style>
 :root{
     --bg:#f5f5f7;
@@ -230,15 +230,16 @@ button.reset:hover{
 
 <header>
     <h1>AI Traffic Light Game</h1>
-    <div class="for-audience">For Administrative Professionals</div>
+    <div class="for-audience">Before You Prompt — For Out-of-Scope Leaders</div>
     <p class="instruction">
-        Click the traffic light that best matches each AI use.
+        For each proposed use, decide whether using Copilot this way is generally appropriate, needs caution, or should stop until the information, purpose, and authority are confirmed.
     </p>
 
     <div class="legend">
-        <p><strong>Green:</strong> Generally safe, low-risk work that does not require confidential, personal, or sensitive information.</p>
-        <p><strong>Yellow:</strong> May be appropriate, but needs caution, de-identification, an approved tool, human review, or confirmation of the intended use.</p>
-        <p><strong>Red:</strong> Do not use unless the tool, information, and purpose are explicitly approved.</p>
+        <p><strong>Green — Generally appropriate:</strong> The task is a good fit for Copilot and can be completed with public, generic, synthetic, or appropriately non-sensitive information. Normal human review still applies.</p>
+        <p><strong>Yellow — Proceed thoughtfully:</strong> The use may be appropriate, but it involves internal work, interpretation, consequential decisions, or information that should be minimized or de-identified. Confirm the purpose, authority, governing source, and level of human review.</p>
+        <p><strong>Red — Stop and confirm:</strong> As proposed, the use requires restricted, highly sensitive, identifiable, confidential, or security-related information, or a use for which permission has not been established. Do not proceed as written until the tool, information, and purpose are explicitly approved.</p>
+        <p><strong>Assume:</strong> Unless a scenario says otherwise, the user is signed into Saskatchewan Polytechnic's approved Microsoft 365 Copilot environment. The Traffic Light evaluates whether the <em>use</em> is appropriate — not whether Copilot's eventual answer will be correct.</p>
     </div>
 </header>
 
@@ -276,7 +277,7 @@ button.reset:hover{
         <span id="answered">0</span><br />
 
         <strong>Rule of thumb:</strong>
-        Use the minimum information needed. AI assists; humans verify.
+        Use the minimum information needed. Green does not mean the output is correct — AI assists; humans verify.
     </div>
 
 </section>
@@ -294,172 +295,172 @@ const baseScenarios = [
 /* ---------------- GREEN ---------------- */
 
 {
-text:"Ask Copilot to rewrite a general staff announcement so it is shorter, clearer, and friendlier.",
+text:"A Manager asks Copilot to rewrite a general staff announcement so it is shorter, clearer, and friendlier. The announcement contains no personal, confidential, or restricted information.",
 answer:"green",
 category:"Green",
-topic:"Rewriting non-sensitive communications",
-review:"This is a strong productivity use when the announcement does not contain confidential, personal, student, employee, financial, or other sensitive information.",
-why:"Green. Rewriting non-sensitive workplace communications is generally a low-risk use of AI."
+topic:"Routine leadership communication",
+review:"This is a good fit for Copilot because the task is general writing support and does not require sensitive information. The Manager still reviews the wording before sending it.",
+why:"Green. This is a generally appropriate productivity use with non-sensitive information and normal human review."
 },
 
 {
-text:"Ask AI to create a reusable meeting agenda template with sections for updates, decisions, action items, and next steps.",
+text:"An Academic Chair asks Copilot to create a reusable faculty-meeting agenda template with sections for updates, decisions, action items, risks, and next steps.",
 answer:"green",
 category:"Green",
-topic:"Creating templates",
-review:"Templates are a good AI use because they can be created without entering real names, meeting details, or confidential information.",
-why:"Green. Generic templates can improve efficiency without requiring sensitive information."
+topic:"Creating leadership templates",
+review:"A generic template can be created without entering real employee, student, or confidential program information.",
+why:"Green. Generic templates can support leadership work without requiring sensitive information."
 },
 
 {
-text:"Use AI to brainstorm ideas for activities at an employee professional development day.",
+text:"A Manager asks Copilot to brainstorm facilitation questions for a service-improvement workshop. No internal performance data, employee names, or client records are provided.",
 answer:"green",
 category:"Green",
-topic:"Brainstorming",
-review:"Brainstorming generic ideas is low risk because the task does not require personal or confidential organizational information.",
-why:"Green. Brainstorming is a good use of AI when confidential information is not needed."
+topic:"Brainstorming and facilitation",
+review:"Brainstorming questions is low risk when the task does not depend on confidential institutional or personal information.",
+why:"Green. Copilot is helping generate ideas, not evaluating people or making a consequential decision."
 },
 
 {
-text:"Ask Copilot to turn a public Saskatchewan Polytechnic webpage into a short summary for staff.",
+text:"An Academic Chair asks Copilot to summarize a public Saskatchewan Polytechnic webpage into five key points for a faculty meeting.",
 answer:"green",
 category:"Green",
 topic:"Summarizing public information",
-review:"Public information can generally be summarized safely, although the result should still be checked for accuracy.",
-why:"Green. Summarizing public information is generally safe as long as the output is verified."
+review:"Public information is appropriate material for summarization. The Chair should still compare the summary with the source before using it.",
+why:"Green. Summarizing public information is generally appropriate, with normal accuracy checking."
 },
 
 {
-text:"Ask AI to create a checklist for organizing a staff meeting, including room booking, technology, refreshments, agenda distribution, and follow-up.",
+text:"A Manager asks Copilot to create a generic decision-brief template with headings for known facts, assumptions, options, risks, recommendation, and next steps.",
 answer:"green",
 category:"Green",
-topic:"Creating administrative checklists",
-review:"Generic process checklists are a strong productivity use because no sensitive information needs to be provided.",
-why:"Green. Creating a generic administrative checklist is a low-risk use of AI."
+topic:"Decision-preparation templates",
+review:"The template improves the structure of leadership thinking without requiring any real case information or transferring the decision to AI.",
+why:"Green. Copilot is being used to structure work, not make the management decision."
 },
 
 {
-text:"Ask Copilot to suggest three professional subject lines for a general reminder email about an upcoming deadline.",
+text:"An Academic Chair gives Copilot a fictional scenario about an employee missing deadlines and asks for coaching questions that could help a leader understand the situation before deciding what to do.",
 answer:"green",
 category:"Green",
-topic:"Improving routine communication",
-review:"Generating subject lines for a non-sensitive message is low risk and can help improve clarity and tone.",
-why:"Green. Routine writing support that does not require sensitive information is generally safe."
+topic:"Leadership coaching practice",
+review:"The scenario is fictional and the request is for questions rather than an employee outcome. This is a useful way to prepare for leadership conversations without exposing real employee information.",
+why:"Green. Synthetic scenarios can help leaders prepare questions and build judgment without using real personal information."
 },
 
 /* ---------------- YELLOW ---------------- */
 
 {
-text:"Use Copilot to summarize meeting notes after removing employee names and other obvious identifying information.",
+text:"An Academic Chair pastes the relevant article from the current collective agreement into Copilot and asks for a plain-language summary and a checklist of items to verify before a probation discussion. No employee details are included.",
 answer:"yellow",
 category:"Yellow",
-topic:"Summarizing de-identified meeting notes",
-review:"Removing names lowers the risk, but the discussion may still reveal confidential issues, unique circumstances, decisions, or identifiable context. Use an approved tool and review carefully.",
-why:"Yellow. De-identification helps, but the remaining context may still be sensitive or identifiable."
+topic:"Collective-agreement interpretation",
+review:"This can be an appropriate use of Copilot, but the collective agreement remains authoritative. The Chair should verify the summary against the actual article and consult the appropriate institutional expertise when the interpretation affects an employee.",
+why:"Yellow. Copilot can support understanding of a collective agreement, but consequential interpretation requires verification against the governing source."
 },
 
 {
-text:"Ask AI to help draft a response to a student using placeholders instead of the student's real name, ID number, program details, or personal circumstances.",
+text:"A Manager asks Copilot to analyze an internal spreadsheet showing service volumes by month and department. Names and IDs have been removed, but some departments have very small numbers.",
 answer:"yellow",
 category:"Yellow",
-topic:"Drafting student-facing responses",
-review:"Using placeholders reduces risk, but student-facing communications still require human review for accuracy, tone, policy, and unintended commitments.",
-why:"Yellow. Placeholders make the task safer, but student-related communications still need careful human review."
+topic:"De-identified operational data",
+review:"The analysis may be appropriate in the approved tool, but small groups or unusual values may still make people or situations identifiable. Minimize the data and review the dataset before using it.",
+why:"Yellow. De-identification reduces risk but does not automatically eliminate re-identification or confidentiality concerns."
 },
 
 {
-text:"Ask Copilot to summarize an internal procedure so you can explain it more clearly to colleagues.",
+text:"An Academic Chair asks Copilot to organize a de-identified student complaint, the instructor response, and a timeline into allegations, documented facts, responses, and unresolved questions.",
 answer:"yellow",
 category:"Yellow",
-topic:"Summarizing internal procedures",
-review:"This may be appropriate when the information is not restricted and the tool is approved, but the summary must be checked against the official procedure before it is used.",
-why:"Yellow. AI can help explain internal procedures, but the official source remains authoritative."
+topic:"Student issue preparation",
+review:"Copilot can help organize information, but student matters are consequential. Use only the minimum permitted information, confirm that the material is sufficiently de-identified, and do not let Copilot determine credibility or the outcome.",
+why:"Yellow. The task may be appropriate with safeguards, but the information and eventual decision require careful human oversight."
 },
 
 {
-text:"Use AI to help organize a de-identified spreadsheet showing appointment volumes by month and department.",
+text:"A Manager wants help preparing for a difficult employee conversation and gives Copilot a minimized, de-identified description of the behaviour and operational impact, using no names, medical information, or unique identifying details.",
 answer:"yellow",
 category:"Yellow",
-topic:"Working with de-identified operational data",
-review:"Aggregated or de-identified data can be appropriate, but small groups, unique values, or contextual clues can sometimes make individuals identifiable.",
-why:"Yellow. De-identification lowers risk, but the data should still be reviewed to ensure individuals cannot be identified."
+topic:"Preparing for an employee conversation",
+review:"The minimized description makes the use more appropriate, but workplace situations can remain recognizable. The Manager should keep the information to the minimum necessary and use Copilot for preparation, not for deciding the employee outcome.",
+why:"Yellow. Copilot can help prepare questions or wording, but employee matters require careful minimization and human judgment."
 },
 
 {
-text:"Ask AI to draft an email about a difficult workplace situation using fictional names and removing the details that identify the people involved.",
+text:"An Academic Chair asks Copilot to generate several scheduling options using a de-identified table of availability and workload constraints, then plans to verify any option against the applicable collective agreement before using it.",
 answer:"yellow",
 category:"Yellow",
-topic:"Drafting sensitive workplace communications",
-review:"Even when names are removed, workplace situations may contain sensitive or recognizable details. Use caution, minimize the information provided, and have a human review the result.",
-why:"Yellow. Sensitive workplace situations can remain identifiable even after names are removed."
+topic:"Workload and scheduling options",
+review:"Option generation can be useful, but scheduling may involve negotiated requirements and employee circumstances. The Chair must verify the output against authoritative workload information and the applicable agreement.",
+why:"Yellow. Copilot can explore options, but governing agreements, confirmed facts, and human judgment still control the decision."
 },
 
 {
-text:"Ask Copilot to help interpret an institutional policy and suggest how it might apply to a situation.",
+text:"A Manager asks Copilot to compare an old and a newly approved internal procedure and identify what changed, what stayed the same, and questions that may require clarification.",
 answer:"yellow",
 category:"Yellow",
-topic:"Policy interpretation",
-review:"AI may help summarize or explain policy language, but it should not be treated as the authority. The official policy and appropriate institutional expert must be consulted when the interpretation matters.",
-why:"Yellow. AI can support understanding, but policy decisions require verification against authoritative sources."
+topic:"Internal procedure comparison",
+review:"This is a reasonable analytical use, but the approved procedure remains the source of truth. Copilot's comparison must be checked before the Manager communicates or acts on it.",
+why:"Yellow. Internal source-grounded analysis can be useful, but the official procedure must be verified before action."
 },
 
 /* ---------------- RED ---------------- */
 
 {
-text:"Paste a student's name, student number, grades, accommodation information, and personal circumstances into AI and ask it to draft a response.",
+text:"An Academic Chair pastes an employee's name, performance history, attendance information, and medical details into Copilot and asks whether the employee should receive discipline.",
 answer:"red",
 category:"Red",
-topic:"Student personal and academic information",
-review:"This combines identifiable student information with sensitive academic or personal information. Do not enter it unless the specific tool, data, and purpose are explicitly approved.",
-why:"Red. Identifiable student information and sensitive academic or personal details require approved systems and approved use."
+topic:"Employee performance and medical information",
+review:"This combines identifiable employee information with sensitive performance and medical information and asks AI to recommend a consequential employment action. Stop and confirm the approved process, information handling, and appropriate HR involvement before using AI.",
+why:"Red. As written, the use involves highly sensitive employee information and transfers too much of the management judgment to AI."
 },
 
 {
-text:"Paste an employee performance issue, medical information, attendance history, and the employee's name into AI to help write documentation.",
+text:"An Academic Chair pastes a student's name, student number, grades, accommodation information, and personal circumstances into Copilot and asks what consequence should be imposed in an academic matter.",
 answer:"red",
 category:"Red",
-topic:"Employee and HR information",
-review:"Employee performance, attendance, medical, and HR information is sensitive. AI use involving this information requires explicit approval and appropriate systems.",
-why:"Red. Sensitive employee and HR information should not be entered into AI unless that specific use is explicitly approved."
+topic:"Identifiable student and accommodation information",
+review:"The prompt combines identifiable student information with sensitive academic and accommodation information and asks AI to determine an outcome. This should not proceed as written without explicit authorization and the appropriate institutional process.",
+why:"Red. Sensitive identifiable student information and consequential decision-making require approved handling and human process."
 },
 
 {
-text:"Upload a spreadsheet containing employee salaries, banking information, or payroll details so AI can identify discrepancies.",
+text:"A Manager uploads a confidential labour-relations investigation file to Copilot and asks it to determine whether the employee committed misconduct and what discipline should result.",
 answer:"red",
 category:"Red",
-topic:"Payroll and financial information",
-review:"Payroll, banking, salary, and related financial information is highly sensitive and should only be handled through approved systems and processes.",
-why:"Red. Payroll and financial information requires strong protection and should not be entered into AI without explicit approval."
+topic:"Labour-relations investigation records",
+review:"Investigation records can contain highly sensitive, confidential, and contested information. The proposed use also asks AI to make credibility and discipline judgments. Stop and confirm the authorized process and information-handling requirements.",
+why:"Red. This combines restricted information with consequential judgments that belong in the approved human process."
 },
 
 {
-text:"Paste usernames, passwords, access codes, security questions, or confidential system credentials into AI so it can help troubleshoot an account.",
+text:"A Manager uploads candidate resumes, interview notes, reference information, and scoring sheets to Copilot and asks it to rank the candidates and select who should be hired.",
+answer:"red",
+category:"Red",
+topic:"Recruitment and candidate selection",
+review:"Recruitment records contain personal information, and candidate selection must follow the approved hiring process and criteria. Do not use AI this way unless the specific data use and process have been explicitly approved.",
+why:"Red. The proposed use combines personal recruitment information with an AI-generated final selection decision."
+},
+
+{
+text:"A Director pastes a confidential, not-yet-released institutional strategy document and sensitive partner negotiations into Copilot to draft commitments that will be sent externally.",
+answer:"red",
+category:"Red",
+topic:"Confidential strategy and external commitments",
+review:"The prompt uses confidential strategic information and asks AI to create external commitments before authorization is established. Stop and confirm both the permitted information use and who has authority to make the commitment.",
+why:"Red. Confidential strategy and institutional commitments require explicit authority and approved handling."
+},
+
+{
+text:"A Manager pastes usernames, passwords, access codes, security questions, or other confidential credentials into Copilot so it can troubleshoot an account.",
 answer:"red",
 category:"Red",
 topic:"Passwords and credentials",
-review:"Authentication information must never be casually shared with an AI tool. Credentials should be protected and handled only through approved security processes.",
-why:"Red. Passwords, access codes, and credentials should never be entered into an AI prompt."
-},
-
-{
-text:"Upload a confidential contract, legal correspondence, or labour-relations document and ask AI what the organization should do next.",
-answer:"red",
-category:"Red",
-topic:"Confidential legal and labour-relations information",
-review:"Confidential contracts, legal correspondence, and labour-relations materials may contain protected information and should not be provided to AI unless that exact use is explicitly approved.",
-why:"Red. Confidential legal or labour-relations information requires approved handling and expert review."
-},
-
-{
-text:"Copy a list of students or employees with names, phone numbers, home addresses, personal email addresses, and notes into AI so it can organize the records.",
-answer:"red",
-category:"Red",
-topic:"Personally identifiable information",
-review:"Large collections of identifiable personal information should not be copied into AI for convenience. Use approved institutional systems designed to store and manage those records.",
-why:"Red. Personal contact information and identifying records belong in approved institutional systems, not general AI prompts."
+review:"Authentication information should not be placed in an AI prompt. Use approved IT and security processes instead.",
+why:"Red. Passwords, access codes, and credentials must be protected and should not be entered into Copilot."
 }
 
-];
+]
 
 let scenarios = [];
 let index = 0;
@@ -656,7 +657,7 @@ function showSummary(){
     if(percent >= 90){
 
         performanceMessage =
-        "Excellent work. You show strong judgment about where AI can safely support administrative work and where privacy, confidentiality, or institutional controls require limits.";
+        "Excellent work. You show strong judgment about where AI can safely support out-of-scope leadership work and where privacy, confidentiality, or institutional controls require limits.";
 
     }else if(percent >= 75){
 
@@ -732,7 +733,7 @@ function showSummary(){
         <strong>Area for improvement:</strong>
         Review
         <strong>${improvement}</strong>
-        scenarios. This is where your answers suggest the most opportunity to strengthen responsible AI decision-making in administrative work.
+        scenarios. This is where your answers suggest the most opportunity to strengthen responsible AI decision-making in out-of-scope leadership work.
 
         ${
             missed
